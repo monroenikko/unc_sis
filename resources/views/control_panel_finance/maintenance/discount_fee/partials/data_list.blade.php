@@ -1,20 +1,22 @@
                         <div class="pull-right">
-                            {{ $SchoolYear ? $SchoolYear->links() : '' }}
+                            {{ $DiscountFee ? $DiscountFee->links() : '' }}
                         </div>
                         <table class="table no-margin">
                             <thead>
                                 <tr>
-                                    <th>School Year</th>
+                                    <th>Discount Name</th>
+                                    <th>Discount Fee Amount</th>
                                     <th>Current</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($SchoolYear)
-                                    @foreach ($SchoolYear as $data)
+                                @if ($DiscountFee)
+                                    @foreach ($DiscountFee as $data)
                                         <tr>
-                                            <td>{{ $data->school_year }}</td>
+                                            <td>{{ $data->disc_type }}</td>
+                                            <td>{{ number_format($data->disc_amt ,2) }}</td>
                                             <td>{{ $data->current == 1 ? 'Yes' : 'No' }}</td>
                                             <td>{{ $data->status == 1 ? 'Active' : 'Inactive' }}</td>
                                             <td>

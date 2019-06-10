@@ -105,6 +105,7 @@ class ClassListController extends Controller
     public function save_data (Request $request) 
     {
         $rules = [
+            'student_type'  => 'required',
             'section'       => 'required',
             'room'          => 'required',
             'school_year'   => 'required',
@@ -124,6 +125,7 @@ class ClassListController extends Controller
         if ($request->id)
         {
             $ClassDetail = \App\ClassDetail::where('id', $request->id)->first();
+            $ClassDetail->student_type_id = $request->student_type;
             $ClassDetail->section_id	 = $request->section;
             $ClassDetail->room_id	 = $request->room;
             $ClassDetail->school_year_id = $request->school_year;
@@ -135,6 +137,7 @@ class ClassListController extends Controller
         }
 
         $ClassDetail = new \App\ClassDetail();
+        $ClassDetail->student_type_id = $request->student_type;
         $ClassDetail->section_id	 = $request->section;
         $ClassDetail->room_id	 = $request->room;
         $ClassDetail->school_year_id = $request->school_year;

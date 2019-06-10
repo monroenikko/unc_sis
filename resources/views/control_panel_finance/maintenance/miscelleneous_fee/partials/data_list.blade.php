@@ -1,20 +1,20 @@
                         <div class="pull-right">
-                            {{ $SchoolYear ? $SchoolYear->links() : '' }}
+                            {{ $MiscFee ? $MiscFee->links() : '' }}
                         </div>
                         <table class="table no-margin">
                             <thead>
                                 <tr>
-                                    <th>School Year</th>
+                                    <th>Miscelleneous Fee Amount</th>
                                     <th>Current</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($SchoolYear)
-                                    @foreach ($SchoolYear as $data)
+                                @if ($MiscFee)
+                                    @foreach ($MiscFee as $data)
                                         <tr>
-                                            <td>{{ $data->school_year }}</td>
+                                            <td>{{ number_format($data->misc_amt ,2) }}</td>
                                             <td>{{ $data->current == 1 ? 'Yes' : 'No' }}</td>
                                             <td>{{ $data->status == 1 ? 'Active' : 'Inactive' }}</td>
                                             <td>

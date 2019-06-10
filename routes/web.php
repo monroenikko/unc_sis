@@ -50,7 +50,52 @@ Route::get('/students-handbook', 'StudentsController@students_handbook')->name('
 
 Route::group(['prefix' => 'finance', 'middleware' => ['auth', 'userroles'], 'roles' => ['finance']], function () {
     Route::get('dashboard', 'Finance\FinanceDashboardController@index')->name('finance.dashboard');
+
+    Route::group(['prefix' => 'maintenance'], function () {
+
+        Route::group(['prefix' => 'tuition-fee'], function () {
+            Route::get('', 'Finance\Maintenance\TuitionFeeController@index')->name('finance.maintenance.tuition_fee');
+            Route::post('', 'Finance\Maintenance\TuitionFeeController@index')->name('finance.maintenance.tuition_fee');
+            Route::post('modal-data', 'Finance\Maintenance\TuitionFeeController@modal_data')->name('finance.maintenance.tuition_fee.modal_data');
+            Route::post('save-data', 'Finance\Maintenance\TuitionFeeController@save_data')->name('finance.maintenance.tuition_fee.save_data');
+            Route::post('deactivate-data', 'Finance\Maintenance\TuitionFeeController@deactivate_data')->name('finance.maintenance.tuition_fee.deactivate_data');
+            Route::post('toggle-current-sy', 'Finance\Maintenance\TuitionFeeController@toggle_current_sy')->name('finance.maintenance.tuition_fee.toggle_current_sy');
+        });
+
+        Route::group(['prefix' => 'miscelleneous-fee'], function () {
+            Route::get('', 'Finance\Maintenance\MiscelleneousFeeController@index')->name('finance.maintenance.misc_fee');
+            Route::post('', 'Finance\Maintenance\MiscelleneousFeeController@index')->name('finance.maintenance.misc_fee');
+            Route::post('modal-data', 'Finance\Maintenance\MiscelleneousFeeController@modal_data')->name('finance.maintenance.misc_fee.modal_data');
+            Route::post('save-data', 'Finance\Maintenance\MiscelleneousFeeController@save_data')->name('finance.maintenance.misc_fee.save_data');
+            Route::post('deactivate-data', 'Finance\Maintenance\MiscelleneousFeeController@deactivate_data')->name('finance.maintenance.misc_fee.deactivate_data');
+           Route::post('toggle-current-sy', 'Finance\Maintenance\MiscelleneousFeeController@toggle_current_sy')->name('finance.maintenance.misc_fee.toggle_current_sy');
+        });
+
+        Route::group(['prefix' => 'discount-fee'], function () {
+            Route::get('', 'Finance\Maintenance\DiscountFeeController@index')->name('finance.maintenance.disc_fee');
+            Route::post('', 'Finance\Maintenance\DiscountFeeController@index')->name('finance.maintenance.disc_fee');
+            Route::post('modal-data', 'Finance\Maintenance\DiscountFeeController@modal_data')->name('finance.maintenance.disc_fee.modal_data');
+            Route::post('save-data', 'Finance\Maintenance\DiscountFeeController@save_data')->name('finance.maintenance.disc_fee.save_data');
+            Route::post('deactivate-data', 'Finance\Maintenance\DiscountFeeController@deactivate_data')->name('finance.maintenance.disc_fee.deactivate_data');
+           Route::post('toggle-current-sy', 'Finance\Maintenance\DiscountFeeController@toggle_current_sy')->name('finance.maintenance.disc_fee.toggle_current_sy');
+        });
+
+        Route::group(['prefix' => 'monthly-fee'], function () {
+            Route::get('', 'Finance\Maintenance\MonthlyFeeController@index')->name('finance.maintenance.monthly_fee');
+            Route::post('', 'Finance\Maintenance\MonthlyFeeController@index')->name('finance.maintenance.monthly_fee');
+            Route::post('modal-data', 'Finance\Maintenance\MonthlyFeeController@modal_data')->name('finance.maintenance.monthly_fee.modal_data');
+            Route::post('save-data', 'Finance\Maintenance\MonthlyFeeController@save_data')->name('finance.maintenance.disc_fee.save_data');
+            Route::post('deactivate-data', 'Finance\Maintenance\MonthlyFeeController@deactivate_data')->name('finance.maintenance.disc_fee.deactivate_data');
+           Route::post('toggle-current-sy', 'Finance\Maintenance\MonthlyFeeController@toggle_current_sy')->name('finance.maintenance.disc_fee.toggle_current_sy');
+        });
+        
+    });
 });
+
+// Route::group(['prefix' => 'finance','middleware' => ['auth', 'userroles'], 'roles' => ['finance']], function () {
+
+    
+// });
 
 Route::group(['prefix' => 'registrar', 'middleware' => ['auth', 'userroles'], 'roles' => ['registrar']], function() {
     Route::get('dashboard', 'Registrar\RegistrarDashboardController@index')->name('registrar.dashboard');

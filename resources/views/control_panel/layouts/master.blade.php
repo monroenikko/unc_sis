@@ -130,10 +130,10 @@
               <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
             </a>
             <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Tuition Fee</span></a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Miscelleneous Fee</span></a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Monthly Fee</span></a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Discount</span></a></li>
+                <li><a href="{{ route('finance.maintenance.tuition_fee') }}"><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Tuition Fee</span></a></li>
+                <li><a href="{{ route('finance.maintenance.misc_fee') }}"><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Miscelleneous Fee</span></a></li>                
+                <li><a href="{{ route('finance.maintenance.disc_fee') }}"><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Discount</span></a></li>
+                <li><a href="{{ route('finance.maintenance.monthly_fee') }}"><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Monthly Fee</span></a></li>
                 <li><a href=""><i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Other Fee</span></a></li>
             </ul>
           </li>   
@@ -153,7 +153,7 @@
                   {{--  Admin Menu  --}}
                   <li><a href="{{ route('admin.maintenance.school_year') }}">&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>School Year</span></a></li>
                   <li><a href="{{ route('admin.maintenance.semester') }}">&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Semester</span></a></li>
-                  <li><a href="{{ route('admin.maintenance.strand') }}">&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Strands</span></a></li>
+                  <li><a href="{{ route('admin.maintenance.strand') }}">&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Strands/Course</span></a></li>
                   <li><a href="{{ route('admin.maintenance.subjects') }}">&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Subjects</span></a></li>
                   <li><a href="{{ route('admin.maintenance.classrooms') }}">&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Class Rooms</span></a></li>
                   <li><a href="{{ route('admin.maintenance.section_details') }}">&nbsp;&nbsp;&nbsp;<i class="fa fa-circle-o"></i>&nbsp;&nbsp;&nbsp; <span>Section Details</span></a></li>

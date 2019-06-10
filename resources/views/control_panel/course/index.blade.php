@@ -28,7 +28,8 @@
 
 @section ('scripts')
     <script src="{{ asset('cms/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
-    <script>        
+    <script>
+        
         
         var page = 1;
         function fetch_data () {
@@ -65,22 +66,6 @@
                             $('.datepicker1').datepicker({
                                 autoclose: true
                             })  
-
-                            $('#student_type').change(function(){
-                                var data= $(this).val();
-                                // alert(data);  
-                                if(data == 3)
-                                {
-                                    $('.js-type').text('Strand Name');  
-                                    $('.js-abv').text('Strand Name Abbreviation');                                   
-                                }
-                                else
-                                {
-                                   
-                                    $('.js-type').text('Course Name');  
-                                    $('.js-abv').text('Course Name Abbreviation'); 
-                                }       
-                            });
                             
                         });
                     }

@@ -45,6 +45,7 @@ class StrandController extends Controller
     public function save_data (Request $request) 
     {
         $rules = [
+            'student_type' => 'required',
             'strand_name' => 'required',
             'abb_name' => 'required'
             
@@ -60,6 +61,7 @@ class StrandController extends Controller
         if ($request->id)
         {
             $Strand = \App\Strand::where('id', $request->id)->first();
+            $Strand->student_type_id = $request->student_type;
             $Strand->strand = $request->strand_name;
             $Strand->abbreviation = $request->abb_name;            
             $Strand->save();
@@ -67,7 +69,7 @@ class StrandController extends Controller
         }
 
         $Strand = new \App\Strand();
-        
+        $Strand->student_type_id = $request->student_type;
         $Strand->strand = $request->strand_name;
         $Strand->abbreviation = $request->abb_name;            
         $Strand->save();

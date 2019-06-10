@@ -14,19 +14,10 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                        <div class="form-group">
-                            <label for="">Student Type </label>
-                            <select name="student_type" id="student_type" class="form-control">
-                                <option value="">Select Student Type</option>
-                                <option value="3" {{ $Strand ? $Strand->student_type_id == 3 ? 'selected' : '' : '' }}>Senior Highschool</option>
-                                <option value="4" {{ $Strand ? $Strand->student_type_id == 4 ? 'selected' : '' : '' }}>College</option>
-                            </select>
-                            <div class="help-block text-red text-center" id="js-student_type">
-                            </div>
-                        </div>
+                    
                     
                         <div class="form-group">
-                                <label class="js-type" for="">Strand Name</label>
+                                <label for="">Strand Name</label>
                                 <input type="text" class="form-control" name="strand_name" value="{{ $Strand ? $Strand->strand : '' }}">
                                 <div class="help-block text-red text-center" id="js-strand_name">
                                 </div>
@@ -34,7 +25,7 @@
                         {{-- {{ $StudentInformation ? $StudentInformation->first_name : '' }} --}}
 
                         <div class="form-group">
-                                <label class="js-abv" for="">Strand Name Abbreviation</label>
+                                <label for="">Strand Name Abbreviation</label>
                                 <input type="text" class="form-control" name="abb_name" value="{{ $Strand ? $Strand->abbreviation : '' }}">
                                 <div class="help-block text-red text-center" id="js-abb_name">
                                 </div>

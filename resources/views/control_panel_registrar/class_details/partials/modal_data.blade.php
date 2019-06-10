@@ -37,6 +37,18 @@
                         <div class="help-block text-red text-center" id="js-subject">
                         </div>
                     </div>  --}}
+                    <div class="form-group">
+                            <label for="">Student Type </label>
+                            <select name="student_type" id="student_type" class="form-control student_type">
+                                <option value="">Select Student Type</option>
+                                <option value="1" {{ $ClassDetail ? $ClassDetail->student_type_id == 1 ? 'selected' : '' : '' }}>Elementary</option>
+                                <option value="2" {{ $ClassDetail ? $ClassDetail->student_type_id == 2 ? 'selected' : '' : '' }}>Highschool</option>
+                                <option value="3" {{ $ClassDetail ? $ClassDetail->student_type_id == 3 ? 'selected' : '' : '' }}>Senior Highschool</option>
+                                <option value="4" {{ $ClassDetail ? $ClassDetail->student_type_id == 4 ? 'selected' : '' : '' }}>College</option>
+                            </select>
+                            <div class="help-block text-red text-center" id="js-student_type">
+                            </div>
+                    </div>
                        
                     <div class="form-group">
                         <label for="">Grade Level</label>
@@ -61,18 +73,47 @@
                         <div class="help-block text-red text-center" id="js-section">
                         </div>
                     </div>
-
-                    <div class="form-group">
-                            <label for="">Strand</label>
+                    
+                    @if($ClassDetail)
+                        @if($ClassDetail->student_type_id == 3 || $ClassDetail->student_type_id == 4)
+                            <div class="form-group">
+                                <label for="">Strand/Course</label>
+                                <select name="strand" id="strand" class="form-control">
+                                    <option value="">Select strand</option>
+                                    @foreach ($Strand as $data) 
+                                        <option value="{{ $data->id }}" {{ $ClassDetail ? $ClassDetail->strand_id == $data->id ? 'selected' : '' : '' }}>{{ $data->strand }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="help-block text-red text-center" id="js-section">
+                                </div>
+                            </div>
+                        @else
+                            <div class="form-group strand_1">
+                                <label for="">Strand/Course</label>
+                                <select name="strand" id="strand" class="form-control">
+                                    <option value="">Select strand</option>
+                                    @foreach ($Strand as $data) 
+                                        <option value="{{ $data->id }}" >{{ $data->strand }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="help-block text-red text-center" id="js-section">
+                                </div>
+                            </div>
+                        @endif  
+                    @else
+                        <div class="form-group strand_1">
+                            <label for="">Strand/Course</label>
                             <select name="strand" id="strand" class="form-control">
                                 <option value="">Select strand</option>
                                 @foreach ($Strand as $data) 
-                                    <option value="{{ $data->id }}" {{ $ClassDetail ? $ClassDetail->strand_id == $data->id ? 'selected' : '' : '' }}>{{ $data->strand }}</option>
+                                    <option value="{{ $data->id }}" >{{ $data->strand }}</option>
                                 @endforeach
                             </select>
                             <div class="help-block text-red text-center" id="js-section">
                             </div>
                         </div>
+                    @endif                     
+                    
                                  
                     <div class="form-group">
                         <label for="">Room</label>
@@ -134,3 +175,4 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+

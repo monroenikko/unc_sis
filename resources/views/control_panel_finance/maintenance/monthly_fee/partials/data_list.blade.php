@@ -1,20 +1,32 @@
                         <div class="pull-right">
-                            {{ $TuitionFee ? $TuitionFee->links() : '' }}
+                            
                         </div>
                         <table class="table no-margin">
                             <thead>
                                 <tr>
-                                    <th>Tuition Fee Amount</th>
-                                    <th>Current</th>
+                                    <th>Grade Lvl</th>
+                                    <th>Tuition Fee</th>
+                                    <th>Misc Fee</th>
+                                    <th>Jun</th>
+                                    <th>Jul</th>
+                                    <th>Aug</th>
+                                    <th>Sept</th>
+                                    <th>Oct</th>
+                                    <th>Nov</th>
+                                    <th>Dec</th>
+                                    <th>Jan</th>
+                                    <th>Feb</th>
+                                    <th>Mar</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($TuitionFee)
-                                    @foreach ($TuitionFee as $data)
+                                {{-- @if ($DiscountFee)
+                                    @foreach ($DiscountFee as $data)
                                         <tr>
-                                            <td>{{ number_format($data->tuition_amt, 2) }}</td>
+                                            <td>{{ $data->disc_type }}</td>
+                                            <td>{{ number_format($data->disc_amt ,2) }}</td>
                                             <td>{{ $data->current == 1 ? 'Yes' : 'No' }}</td>
                                             <td>{{ $data->status == 1 ? 'Active' : 'Inactive' }}</td>
                                             <td>
@@ -30,6 +42,6 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                @endif
+                                @endif --}}
                             </tbody>
                         </table>

@@ -4,9 +4,9 @@
                         <table class="table no-margin">
                             <thead>
                                 <tr>
+                                    <th>Student Type</th>
                                     <th>Strand</th>
-                                    <th>Strand Abbreviation</th>
-                                    
+                                    <th>Strand Abbreviation</th>                                    
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
@@ -15,6 +15,7 @@
                                 @if ($Strand)
                                     @foreach ($Strand as $data)
                                         <tr>
+                                            <td>{{ ($data->student_type_id == 3 ? 'Senior Highschool' : 'College') }}</td>
                                             <td>{{ $data->strand }}</td>
                                             <td>{{ $data->abbreviation }}</td>
                                             <td>{{ $data->status == 1 ? 'Active' : 'Inactive' }}</td>

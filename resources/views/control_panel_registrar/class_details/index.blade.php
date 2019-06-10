@@ -41,6 +41,8 @@
 @section ('scripts')
     <script src="{{ asset('cms/plugins/timepicker/bootstrap-timepicker.min.js') }}"></script>
     <script>
+        
+        
         var page = 1;
         function fetch_data () {
             var formData = new FormData($('#js-form_search')[0]);
@@ -73,8 +75,22 @@
                         $('.js-modal_holder .modal').on('shown.bs.modal', function () {
                             //Timepicker
                             $('.timepicker').timepicker({
-                            showInputs: false
+                                showInputs: false
                             })
+                            
+                            $('.student_type').change(function(){
+                            var data= $(this).val();
+                                // alert(data);  
+                                if(data == 1 || data == 2)
+                                {
+                                    $('.strand_1').hide();
+                                }
+                                else
+                                {
+                                    $('.strand_1').show();
+                                }       
+                            });
+       
                         })
                     }
                 });

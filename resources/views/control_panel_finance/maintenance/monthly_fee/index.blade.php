@@ -1,7 +1,7 @@
 @extends('control_panel.layouts.master')
 
 @section ('content_title')
-    Strands
+    Discount Fee
 @endsection
 
 @section ('content')
@@ -20,15 +20,14 @@
         <div class="overlay hidden" id="js-loader-overlay"><i class="fa fa-refresh fa-spin"></i></div>
         <div class="box-body">
             <div class="js-data-container">
-                @include('control_panel.strand.partials.data_list')
+                @include('control_panel_finance.maintenance.monthly_fee.partials.data_list')
             </div>
         </div>
     </div>
 @endsection
 
 @section ('scripts')
-    <script src="{{ asset('cms/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
-    <script>        
+    <script>
         
         var page = 1;
         function fetch_data () {
@@ -36,7 +35,7 @@
             formData.append('page', page);
             loader_overlay();
             $.ajax({
-                url : "{{ route('admin.maintenance.strand') }}",
+                url : "{{ route('finance.maintenance.disc_fee') }}",
                 type : 'POST',
                 data : formData,
                 processData : false,
@@ -47,53 +46,27 @@
                 }
             });
         }
-        
         $(function () {
             $('body').on('click', '#js-button-add, .js-btn_update_sy', function (e) {
                 e.preventDefault();
                 {{--  loader_overlay();  --}}
                 var id = $(this).data('id');
                 $.ajax({
-                    url : "{{ route('admin.maintenance.strand.modal_data') }}",
+                    url : "{{ route('finance.maintenance.monthly_fee.modal_data') }}",
                     type : 'POST',
                     data : { _token : '{{ csrf_token() }}', id : id },
                     success : function (res) {
                         $('.js-modal_holder').html(res);
                         $('.js-modal_holder .modal').modal({ backdrop : 'static' });
-                        $('.js-modal_holder .modal').on('shown.bs.modal', function () {
-                            //Date picker
-                            $('.datepicker1').datepicker({
-                                autoclose: true
-                            })  
-
-                            $('#student_type').change(function(){
-                                var data= $(this).val();
-                                // alert(data);  
-                                if(data == 3)
-                                {
-                                    $('.js-type').text('Strand Name');  
-                                    $('.js-abv').text('Strand Name Abbreviation');                                   
-                                }
-                                else
-                                {
-                                   
-                                    $('.js-type').text('Course Name');  
-                                    $('.js-abv').text('Course Name Abbreviation'); 
-                                }       
-                            });
-                            
-                        });
                     }
                 });
             });
 
-            
-
-            $('body').on('submit', '#js-form_school_year', function (e) {
+            $('body').on('submit', '#js-form_disc_fee', function (e) {
                 e.preventDefault();
                 var formData = new FormData($(this)[0]);
                 $.ajax({
-                    url         : "{{ route('admin.maintenance.strand.save_data') }}",
+                    url         : "{{ route('finance.maintenance.disc_fee.save_data') }}",
                     type        : 'POST',
                     data        : formData,
                     processData : false,
@@ -133,7 +106,7 @@
                 alertify.defaults.theme.cancel = "btn btn-danger btn-flat";
                 alertify.confirm('Confirmation', 'Are you sure you want to deactivate?', function(){  
                     $.ajax({
-                        url         : "{{ route('admin.maintenance.school_year.deactivate_data') }}",
+                        url         : "{{ route('finance.maintenance.disc_fee.deactivate_data') }}",
                         type        : 'POST',
                         data        : { _token : '{{ csrf_token() }}', id : id },
                         success     : function (res) {
@@ -172,7 +145,7 @@
                 alertify.defaults.theme.cancel = "btn btn-danger btn-flat";
                 alertify.confirm('Confirmation', 'Are you sure you want to '+toggle_title+' ?', function(){  
                     $.ajax({
-                        url         : "{{ route('admin.maintenance.school_year.toggle_current_sy') }}",
+                        url         : "{{ route('finance.maintenance.disc_fee.toggle_current_sy') }}",
                         type        : 'POST',
                         data        : { _token : '{{ csrf_token() }}', id : id },
                         success     : function (res) {
@@ -202,9 +175,5 @@
                 });
             });
         });
-
-        // $( "#selectdate" ).datepicker();
-        // $( "#tbdatepicker2" ).datepicker();
-        // $( "#tbdatepicker3" ).datepicker();
     </script>
 @endsection
