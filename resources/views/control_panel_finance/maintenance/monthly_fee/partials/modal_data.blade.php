@@ -35,74 +35,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">June</label>
+                        <label for="">Monthly Fee</label>
                         <input type="number" class="form-control" name="disc_fee" value="">
                         <div class="help-block text-red text-center" id="js-disc_fee">
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="">July</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">August</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">September</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">October</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">November</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">December</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">January</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">February</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">March</label>
-                        <input type="number" class="form-control" name="disc_fee" value="">
-                        <div class="help-block text-red text-center" id="js-disc_fee">
-                        </div>
-                    </div>
+                    
                     
                 </div>
                 <div class="modal-footer">

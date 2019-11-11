@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="{{ asset('cms/plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('cms/plugins/select2/select2.min.css') }}">
+
   <link rel="stylesheet" href="{{ asset('cms/dist/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->

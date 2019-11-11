@@ -16,9 +16,9 @@ class MonthlyFeeController extends Controller
             return view('control_panel_finance.maintenance.monthly_fee.partials.data_list');
         }
         
-        // $DiscountFee = \App\DiscountFee::where('status', 1)->paginate(10);
+        $MonthlyFee = \App\MonthlyFee::where('status', 1)->paginate(10);
         // return view('control_panel_finance.maintenance.discount_fee.index', compact('DiscountFee'));
-        return view('control_panel_finance.maintenance.monthly_fee.index');
+        return view('control_panel_finance.maintenance.monthly_fee.index', compact('MonthlyFee'));
     }
 
     public function modal_data (Request $request) 

@@ -7,27 +7,19 @@
                                     <th>Grade Lvl</th>
                                     <th>Tuition Fee</th>
                                     <th>Misc Fee</th>
-                                    <th>Jun</th>
-                                    <th>Jul</th>
-                                    <th>Aug</th>
-                                    <th>Sept</th>
-                                    <th>Oct</th>
-                                    <th>Nov</th>
-                                    <th>Dec</th>
-                                    <th>Jan</th>
-                                    <th>Feb</th>
-                                    <th>Mar</th>
+                                    <th>Monthly Fee</th>
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                {{-- @if ($DiscountFee)
-                                    @foreach ($DiscountFee as $data)
+                            <tbody> 
+                                @if ($MonthlyFee)
+                                    @foreach ($MonthlyFee as $data)
                                         <tr>
-                                            <td>{{ $data->disc_type }}</td>
-                                            <td>{{ number_format($data->disc_amt ,2) }}</td>
-                                            <td>{{ $data->current == 1 ? 'Yes' : 'No' }}</td>
+                                            <td>{{ $data->grade_level_id }}</td>
+                                            <td>{{ $data->tuition_fee_id }}</td>
+                                            <td>{{ $data->misc_fee_id }}</td>
+                                            <td>{{ $data->monthly_fee }}</td>
                                             <td>{{ $data->status == 1 ? 'Active' : 'Inactive' }}</td>
                                             <td>
                                                 <div class="input-group-btn pull-left text-left">
@@ -42,6 +34,6 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                @endif --}}
+                                @endif
                             </tbody>
                         </table>

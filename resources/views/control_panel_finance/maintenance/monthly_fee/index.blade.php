@@ -1,7 +1,7 @@
 @extends('control_panel.layouts.master')
 
 @section ('content_title')
-    Discount Fee
+    Monthly Fee
 @endsection
 
 @section ('content')
